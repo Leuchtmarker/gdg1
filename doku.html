@@ -1,0 +1,572 @@
+﻿<!-- HTML document -->
+<!--
+    Grundlagen der Gestaltung Framework
+    Univerität Ulm
+    Institut für Medienforschung und -entwicklung
+    Tobias Lahmann
+-->
+<!--
+    This is the html-framework for the course 'Grundlagen der Gestaltung I'
+    of the Ulm University
+
+    The purpose is for the students participating to show their work
+    done over the period of one semester.
+
+    The purpose of this framework is to provide a clean and a simple
+    stage for the students to present their work.
+-->
+<!--
+    Dieser Abschnitt sollte von niemandem verändert werden!
+    Bitte weiterscrollen, hier gibt es nichts zu sehen.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grundlagen der Gestaltung I | Wintersemester 17/18</title>
+    <!-- Stylesheets -->
+    <link type="text/css" href="asset/css/main.min.css" rel="stylesheet" />
+    <link type="text/css" href="asset/css/animation.css" rel="stylesheet" />
+	<link type="text/css" href="doku_data/toggle.html" rel="stylesheet">
+    <!-- Scripts -->
+    <script type="text/javascript" src="asset/lib/jquery-3.1.1.min.js"></script>
+    <script defer type="text/javascript" src="asset/lib/default.min.js"></script>
+</head>
+<body>
+    <!-- The splash screen when opening the documentation -->
+    <div id="intro" class="frame">
+        <div class="pane">
+            <aside class="intro">
+                <h4>universität ulm</h4>
+                <h4>medieninformatik</h4>
+                <p>grundlagen der gestaltung I</p>
+                <p>wintersemester 2017/18</p>
+                <br />
+                <p>dokumentation</p>
+                <p id="sN"></p>
+                <br />
+                <label class="start" onclick="launchIntoFullscreen(document.documentElement);">vollbild-modus</label>
+                <label class="start" onclick="launchIntoWindowed()">fenster-modus</label>
+            </aside>
+        </div>
+    </div>
+    <!-- The actual documentation -->
+    <div id="doku" class="frame">
+
+        <nav id="navigation">
+            <!-- navigation menu, left -->
+            <div class="navigation">
+                <div id="navscroll" class="simplebar"></div>
+            </div>
+            <div class="navSlideBtn">
+                <!-- trigger button for the navigation menu, left -->
+                <label for="navTrigger" id="navTriggerText"></label>
+            </div>
+        </nav>
+        <input type="checkbox" id="navTrigger" name="navTrigger" class="navTrigger" />
+
+        <div class="pane">
+            <header>
+                <!-- title section -->
+                <label id="title"></label>
+            </header>
+            <section>
+                <!-- content section -->
+                <!-- IMAGE -->
+                <img id="contentImg" />
+                <!-- ANIMATION -->
+                <canvas id="canvas" width="720" height="540"></canvas>
+                <script type="text/javascript" src="asset/lib/animation.js"></script>
+                <div id="contentAnim">
+                    <div id="buttons">
+                        <!-- Hier kann verändert werden, falls die Buttons nicht mittels css, sondern mittels
+                        Bildern/Animationen/Gedanken gesteuert werden.-->
+						<input id="button1" onclick="playPauseAnimation()" type="checkbox">
+						<label id="toggle" for="button1"></label>
+                        <input id="button3" type="button" onclick="changeTypeOfObj()" />
+                        <input id="button4" type="button" onclick="faster()" />
+                        <input id="button5" type="button" onclick="slower()" />
+                        <input id="button7" type="button" onclick="changePermutationBack()" />
+                        <input id="button8" type="button" onclick="changeObjectFwrd()" />
+                    </div>
+                </div>
+                <!-- FLASH -->
+                <embed id="flashCanvas" width="720" height="540" type="application/x-shockwave-flash" src="." />
+            </section>
+
+            <aside id="description" class="simplebar">
+            </aside>
+
+            <aside id="descNav">
+                <!-- description navigation section -->
+                <input class="before" type="button" onclick="prevDesc()" />
+                <label id="descNum"></label>
+                <input class="after" type="button" onclick="nextDesc()" />
+            </aside>
+
+            <footer>
+                <!-- quicknavigation and border-listener -->
+                <input class="before" type="button" onclick="prevImg()" />
+                <input id="imgNum" type="text" disabled="disabled"/>
+                <input class="after" type="button" onclick="nextImg()" />
+                <input id="blur" type="text" style="display: none; position: absolute; opacity: 0;">
+                <input id="borderListener" name="borderListener" type="checkbox" style="float: right" onclick="triggerBorder()">
+                <label id="textTrigger" for="borderListener">&nbsp;</label>
+                <label id="borderText">Rahmen ein-/ausschalten</label>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<!------------------------------------------------->
+<!-- Hier beginnt der Inhalt der Dokumentation   -->
+<!-- Dazu bitte nach dem bekannten Schema die    -->
+<!-- Verlinkungen zu den Ordnern/Dateien her-    -->
+<!-- stellen und die Bilder in der Dokumentation -->
+<!-- anzuzeigen                                  -->
+<!------------------------------------------------->
+<!-- Typ-Definition:                             -->
+<!--           Bilder: typ="bild"                -->
+<!--           Flash-Objekte: typ="flash"        -->
+<!--           Animation (JS): typ="animation"   -->
+<!------------------------------------------------->
+
+<xml id="data" name="gjelbrim haskaj" style="display:none;">
+    <doku>
+		
+		<abschnitt titel="Einleitung">
+			<inhalt titel="Einleitung" quelle="inhalte/png/weiss.png" typ="bild" rahmen="aus">
+				<detail>In dieser Dokumentation werden, die Ergebnisse, die während des Moduls "Grundlagen der Gestaltung I" im Rahmen des Grundstudiums der Medieninformatik, erzielt worden sind, präsentiert.
+				
+				Das Modul beschäftigt sich mit der Untersuchung geometrischer Grundformen (Kreis, Quadrat, Dreieck) und der Bildung der Grundlagen zur Bildung von Wort-/und Bildmarken. </detail>
+				<detail>Inhalt:
+				- Kreis, Quadrat, Dreieck: Kompositions- und Struckturübungen
+					
+				- Punkt, Linie, Fläche
+					
+				- Kompositionsübungen: Proportionen, Netze, Raster, Zeichen
+					
+				- Lineare Transformationen
+				
+				- Symmetrieoperationen
+				
+				- Flächen
+					
+				- Permutation und Animation
+				
+				- Kameraübungen zu Strukturen
+					
+				- Farbe
+				</detail>
+			</inhalt>
+			<inhalt titel="Hinweise" quelle="inhalte/png/weiss.png" typ="bild" rahmen="aus">
+				<detail>Die Dokumentation ist wie folgt aufgebaut:
+                Im ersten Screen einer Aufgabe, wird die Aufgabenstellung sowie der Lösungsansatz, der in diesem Screen präsentierten Lösung, wiedergegeben. Auf den darauffolgenden Screens sind jeweils lediglich die Lösungswege wiedergegeben.
+                Wenn nicht anders angegeben, wird nur die Reinzeichnung bzw. die Reinzeichnungen beschrieben. Wenn es der Übersichtlichkeit oder der besseren Nachvollzierbarkeit dient, kann eine Lösungsbeschreibung auch auf mehrere Unterseiten aufgeteilt werden.
+				Reinzeichnungen sind meistens auf der rechten Seite des Screens und besitzen einen schwarzen Screen, eingescannte Skizzen sind meist auf der linken Seite des Screens zu finden und besitzen einen grauen Rand.</detail>
+				<detail>Bekannte Fehler/Probleme:
+				Animation: Das starten der pausierten Animation mit einem anderen, als den Play/Pause-Toggle-Button, sorgt für ein unlogisches Erscheinen des Play/Pause-Buttons.
+				
+				getestet mit Mozilla Firefox 59.0.2 unter Ubuntu 17.10 und Windows 10</detail>
+			</inhalt>
+		</abschnitt>
+		
+        <abschnitt titel="Kreis, Quadrat, Dreieck: Kompositions- und Struckturübungen">
+            <inhalt titel="Aufgabe 1 a): 1 Kreis" quelle="inhalte/png/a1a.png" typ="bild" rahmen="aus">
+                <detail>  Es sollte ein Kreis auf einer quadratischen Grundfläche angeordnet werden.
+                    
+				Der Kreis hier ist ausgefüllt und geht auf der vertikalen Achse leicht nach oben, so ensteht eine Fixierung auf die Obere Hälfte des Bildes.</detail>
+            </inhalt>
+            <inhalt titel="Aufgabe 1 b): 2 Kreise" quelle="inhalte/png/a1b.png" typ="bild" rahmen="aus">
+                <detail>
+                    Auf einer qudratischen Grundfläche sollte eine Komposition, bestehend aus zwei, gleich oder unterschiedlichgroßer Kreise enstehen.
+                    
+                    Die Komposition hier besteht aus zwei unterschiedlich großen Kreisen. Die Fixierung in dieser Komposition ist oben in der rechten Ecke. Durch die unterschiedliche Größe der Kreise wirkt die Komposition dynamisch.</detail>
+				</inhalt>
+				<inhalt titel="Aufgabe 1 c): mehrere Kreise" quelle="inhalte/png/a1c.png" typ="bild" rahmen="aus">
+					<detail>Eine Komposition mit mehreren Kreisen, gleicher oder unterschiedlicher Größe.
+                        
+                        Die vier Kreise in dem Bild sind in absteigendend nach ihrem Flächeninhalt von unten links nach oben rechts geordnet. Der letzte Kreis ist ohne Füllung, dadurch bekommt die Komposition beidseitig ein Gewicht: Rechts durch die Größe der Kreise und links durch den Unterschied links.</detail>
+            </inhalt>
+			<inhalt titel="Aufgabe 2 a): 1 Grundform" quelle="inhalte/png/a2a.png" typ="bild" rahmen="aus">
+				<detail>Die Aufgabe bestand darin, eine beliebige geometrische Grundform auf einer quadratischen Grundfläche anzuordnen.
+				
+                Ein Dreick in der Mitte der Komposition, welches auf die linke Seite des Bildes zeigt. So entsteht ein Fokus auf die auf den Bereich links vom Dreieck.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 2 b): 2 Grundformen" quelle="inhalte/png/a2b.png" typ="bild" rahmen="aus">
+				<detail>Zwei geometrische Grundformen mit gleicher oder unterschiedlicher Größe sollten auf einer qudratischen Grundfläche angeordnet werden.
+                    
+				Diese Komposition besteht aus zwei Quadraten mit unterschiedlichem Flächeninhalt. Die Komposition ist nach unten rechts angeordnet, dadurch bekommt die Komposition auf dieser Seite ein schwereres Gewicht. </detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 2 c): mehrere Grundformen" quelle="inhalte/png/a2c.png" typ="bild" rahmen="aus">
+				<detail>Auf einer quadratischen Grundfläche sollten mehrere, gleich oder unterschiedlich große, geometrische Grundformen in einer Kompostion angeordnet werden.
+                    
+				Neun Quadrate wurden so angeordnet, dass sich drei größere Quadrate bilden. Obwohl das Bild aus neun Quadraten besteht, ist es durch ihre Anordnung, recht übersichtlich.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 3: Sachverhalte und Begriffe I" quelle="inhalte/png/a3_1.png" typ="bild" rahmen="aus">
+				<detail>Die Aufgabe bestand darin, aus geometrischen Grundformen, Begriffe und Sachverhalte darzustellen. Das Darstellen von Begriffen und Sachverhalten ist auch mithilfe von Gegegensatzpaaren möglich.
+                    
+                    
+				In diesem Screen sind die Begriffe "Ausgrenzung" und "Stabilität" dargstellt.
+					
+				Ausgrenzung: Die Kreise sind zu einem größeren Kreis angeordnet und sind alle ohne Füllung. Auserhalb des großen Kreises steht das "ausgegrenzte" Dreieck, welches sich zusätzlich auch in der Füllung unterschiedet.
+				Stabilität: Dadurch, dass unter einer Reihe von Kreisen immer eine Reihe ist, die mehr Elenmente enhält wirkt die Position stabil.
+				</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 3: Sachverhalte und Begriffe II" quelle="inhalte/png/a3_2.png" typ="bild" rahmen="aus">
+				<detail>In diesem Screen sind die gegensetzlichen Begriffe "unruhig" und "ruhig" dargestellt.
+				
+				unruhig: Es sind verschiedene Kreise von unterschiedlicher Größe und unterschiedlicher Füllung quer durch die ganze Position verteilt. Es ist nicht möglich auf einen Blick eine genaue Übersicht über die Komposition zu verschaffen.
+				ruhig: Es sind nur zwei Kreise von gleicher Größe und auf gleicher Höhe enthalten, somit ist die Komposition sehr übersichtlich.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 3: Sachverhalte und Begriffe III" quelle="inhalte/png/a3_3.png" typ="bild" rahmen="aus">
+			</inhalt>
+        </abschnitt>
+		
+		<abschnitt titel="Punkt, Linie, Fläche">
+			<inhalt titel="Aufgabe 4 a): 1 Linie" quelle="inhalte/png/a4a.png" typ="bild" rahmen="aus">
+				<detail>Es sollte eine Linie innerhalb einer quadratischen Grundfläche angeordnet werden.
+                    
+				Durch ihre mittige Position teilt die Linie den den Raum in zwei gleich große Flächen.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 4 b): 2 Linien" quelle="inhalte/png/a4b.png" typ="bild" rahmen="aus">
+				<detail>Zwei parallel zueinander laufende Linien sollten in eine quadratische Grundfläche angeordnet werden. Die Linien können von gleicher oder unterschiedlicher Länge sein.
+				
+                Auch hier teilt die längere Linie den Raum in zwei gleich große Flächen. Allerdings sorgt die kurze Linie auf der linken Fläche dafür, dass der Fokus eher auf dieser Fläche der Komposition liegt.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 4 c): Mehrere Linien" quelle="inhalte/png/a4c.png" typ="bild" rahmen="aus">
+				<detail>Beliebig viele horizontale und vertikale Linien sollten in einer qudratischen Grundfläche angeordnet werden.
+				Die Positionierung der unterschiedlichen Linien sorgt dafür, dass die Komposition die Form einer Fahne mit Fahnenmast annimmt.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 5 a): dick unn dünn" quelle="inhalte/png/a5a.png" typ="bild" rahmen="aus">
+				<detail>Die Aufgabenstellung sind wie in Aufgabe 4, allerdings soll hier Variationen und Kombinationen verschiedener Parameter untersucht werden. Welche das sind lässt sich aus der Überschrift des jeweiligen Screens ableiten.
+                    
+				Zwei parallel zueinander verlaufende Lininen in einer Fläche. Eine davon "dick", also in einer viel höheren Stärke, als die "dünne" Linie.
+				Der Raum hier wird durch die dickere Linie geteilt. Die dünnere Linie bestimmt den Fokus des Betrachters.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 5 b): kurz und lang" quelle="inhalte/png/a5b.png" typ="bild" rahmen="aus">
+				<detail>Zwei parallel zueinander verlaufende Lininen in einer Fläche. Eine davon ist länger als die andere. Die längere Linie teilt die Fläche in zwei gleich große Bereiche. Der untere Bereich wird durch die, im Vergleich zur anderen Linie, sehr kurze Linie gestört.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 5c): gerade, geknickt, gebogen und gekrümmt" quelle="inhalte/png/a5c.png" typ="bild" rahmen="aus">
+				<detail>Je zwei parallel zueinander verlaufende Linien in unterschiedlicher Qualität:
+					
+					gerade und geknickt,
+					gebogen und gekrümmt.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 6: Anordnung von Linien auf einer Fläche I" quelle="inhalte/png/a6_1.png" typ="bild" rahmen="aus">
+				<detail>Linien unterschiedlichster Parameter werden in unterschiedlichsten Winkeln auf einer Fläche angeordnet.
+                    
+				Die beiden gekrümmten Linien sind in der Mitte positioniert, sie nehmen zusammen eine vasenähnliche Figur ein. Auch wenn die rechte Linie eine leicht andere Form und Länge hat, wirken beide Linien auf den ersten Blick dennoch identisch.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 6: Anordnung von Linien auf einer Fläche II" quelle="inhalte/png/a6_2.png" typ="bild" rahmen="aus">
+				<detail>Die Linien in der oberen Bildhälfte stehen im rechten Winkel zu den Linien in der unteren Bildhälfte. Die Zweiteilung des Bildes ist hier, durch die gleichmäßigen Längen, auf den ersten Blick zu erkennen.</detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Kompositionsübungen: Proportionen, Netze, Raster, Zeichen">
+			<inhalt titel="Aufgabe 7 a): Zwei gleiche Elemente gleicher Größe I" quelle="inhalte/png/a7a_1.png" typ="bild" rahmen="aus">
+				<detail>Es sollte durch die Kombination zweier gleicher Elementen von gleicher Größe ein einfaches aber prägnantes Zeichen entworfen werden.
+				
+                In der linken Kompsition sind zwei Quadrate, die in der Mitte eine quadratische Schnittmenge bilden.
+				Die Rechte Komposition besteht aus zwei Dreiecken, die im Winkel von 180° zueinander gelegt sind. Es ensteht ein Zeichen, dass dem Davidstern ähnelt.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 a): Zwei gleiche Elemente gleicher Größe II" quelle="inhalte/png/a7a_2.png" typ="bild" rahmen="aus">
+				<detail>Die beiden identischen Dreicke teffen und überlappen sich in der Mitte, sodass sich in ihrer Schnittmenge ein weiteres, kleines Dreieck bildet.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 b): Zwei gleiche Elemente unterschiedlicher Größe I" quelle="inhalte/png/a7b_1.png" typ="bild" rahmen="aus">
+				<detail>Durch die Kombination zweier gleicher Elemente mit unterschiedlichen Größen, sollte ein einfaches, prägnantes Zeischen entworfen werden.
+                    
+                In der linken Komposition befindet sich ein kleines Quadrat in der linken unteren Ecke des großen Quadrates. So ensteht ein Fokus auf diese Ecke des Quadrates.
+				In der rechten Skizze befindet sich in der Mitte des großen Dreieckes ein kleineres Dreieck, welches im Winkel von 180° zu dem großen Dreieck steht.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 b): Zwei gleiche Elemente unterschiedlicher Größe II" quelle="inhalte/png/a7b_2.png" typ="bild" rahmen="aus">
+				<detail>Diese Komposition besteht aus zwei Kreisen, die übereinander liegen. Der kleinere Kreis ohne Füllung lässt den großen, gefüllten Kreis nach unten links hin schwerer wirken.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 c): Zwei verschiedene Elemente gleicher Größe I" quelle="inhalte/png/a7c_1.png" typ="bild" rahmen="aus">
+				<detail>Zwei verschiedene Elemente, von gleicher Größe sollten zu einem einfachen, prägnanten Zeichen kombiniert werden.
+				
+                In der rechten Skizze befindet sich ein Kreis in einem Dreieck. Die Schnittmengen dieser beiden Figuren bildet drei neue Dreiecke, welche allerdings eine, durch den Kreis, rundliche Grundseite haben.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 c): Zwei verschiedene Elemente gleicher Größe II" quelle="inhalte/png/a7c_2.png" typ="bild" rahmen="aus">
+				<detail>Der Kreis und das Dreieck haben die selbe Höhe. Der Kreis wird teilweise durch das Dreieck bedeckt. Ihre Kombination lässt die Komposition groß erscheinen.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 d): Zwei verschiedene Elemente unterschiedlicher Größe I" quelle="inhalte/png/a7d_1.png" typ="bild" rahmen="aus">
+				<detail>Zwei Elemente, verschiedener Form und Größe sollten so kombiniert werden, dass ein einfaches, prägnantes Zeichen ensteht.
+                    
+				In der ersten Skizze wird ein Kreis mit einem Rechteck kombiniert. Der Kreis ist an sich "unsichtbar", lässt sich aber durch die fehlende obere linke Ecke des Rechtecks, welche in Kreisform ausgeschnitten worden ist, erkennen.
+				Bei der rechten Skizze wird ein Halbkreis über ein Quadrat gelegt. Es ensteht so eine Komposition, die der groben Form eines Pilzes ähnlich sieht.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 7 d): Zwei verschiedene Elemente unterschiedlicher Größe II" quelle="inhalte/png/a7d_2.png" typ="bild" rahmen="aus">
+				<detail>Ein Kreis und ein Dreieck werden hier kombiniert. Der Kreis ist um einiges kleiner als das Dreieck und liegt zirka im letzten Viertel der Grundlinie des Dreieckes und verursacht dort ein Loch. Das Loch in dem Dreieck nimmt die Aufmerksamkeit der Komposition nach rechts.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 8: Herauslösen von Elementen 3x3-Quadrat und 3x3-Kreis" quelle="inhalte/png/a8_1.png" typ="bild" rahmen="aus">
+				<detail>Ein Kreis bzw. ein Quadrat sollte mit einem Orthogonalnetz in 3x3 gleichmäßigen Segmenten unterteilt werden. Durch Herauslösen von Elementen sollten neue Figuren entstehen.
+				
+                Bei dem 3x3-Quadrat ist durch das Herauslösen von 3 Elementen eine neue Form enstanden, die durch eine Grundlinie, die länger ist, als die parallel dazu stehende Linie ist, das Gefühl von Stabilität erweckt.
+				Bei dem 3x3-Kreis wurden 4 Elemente entfernt. Es ist ein Kreuz mit teilweise rundlichen Kanten entstanden.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 8: Herauslösen von Elementen 4x4Quadrat und 4x4-Kreis" quelle="inhalte/png/a8_2.png" typ="bild" rahmen="aus">
+				<detail>Ein Kreis bzw. ein Quadrat sollte mit einem Orthogonalnetz in 4x4 gleichmäßigen Segmenten unterteilt werden. Durch Herauslösen von Elementen sollten neue Figuren entstehen.
+				
+                Bei dem 4x4-Quadrat wurden 8 Segmente herausgelöst. Es enstand ein Symbol, welches einer Treppe ähnlich sieht.
+				Dem 4x4 Kreis wurden 6 Elemente entfernt. Es ist ein Symbol enstanden, welches einen Bullen darstellen könnte.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 9: Zeichenentwicklung Raster" quelle="inhalte/png/a9_0.png" typ="bild" rahmen="ein">
+			<detail>Für die Bearbeitung dieser Aufgabe waren folgende Raster vorgegeben:
+				
+				45°-Orthogonalnetz (links)
+				Isometrieraster (rechts)
+				
+				Mithilfe dieser Raster sollten Zeichen entwickelt werden.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 9: 45°-Orthogonalnetz" quelle="inhalte/png/a9_1.png" typ="bild" rahmen="aus">
+				<detail>Das obere Bild zeigt den Effekt einer Dreidimensionalität, die in einem 45°-Orthogonalnetz möglich ist, das untere Bild, die Perspektivmöglichkeit.
+				
+				Das Zeichen sieht aus wie eine abstrakte, eckige "8".</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 9: Isometrieraster" quelle="inhalte/png/a9_2.png" typ="bild" rahmen="aus">
+				<detail>Das untere Bild zeigt den Effekt einer Dreidimensionalität, die in einem Isometrieraster möglich ist, das obere Bild, die Perspektivmöglichkeit.
+				
+				Das Zeichen könnte auf einer Seite der des sichtbaren Mantels ein "P" und auf der anderen Seite ein "E" darstellen.</detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Lineare Transformationen">
+			<inhalt titel="Aufgabe 10 a): Lineare Transformation I" quelle="inhalte/png/a10a.png" typ="bild" rahmen="ein">
+				<detail>Es sollte eine sieben- oder achtschrittige, lineare Transformationsreihe, bestehend aus einer geometrischen Grundform, erstellt werden.
+				Zwischen den Transformationsschritten werden wiederholt einzelne oder mehrere Parameter, durch sich ein wiederholendes Muster verändert.</detail>
+				<detail>Bei der ersten Transformationsreihe ändert sich die Größe des Durchmessers. Der Kreis bleibt an der unteren linken Ecke fixiert.
+					
+				Das Rechteck aus der zweiten Transformationsreihe verändert sich in der Position bzw. seinem Winkel, wie es zur Grundlinie steht.
+					
+				In der letzten Transformationsreihe verändert sich die Strichstärke des Dreiecks nach innen soweit, dass es im letzten Transformationsschritt so aussieht, als hätte das Dreieck eine durchgehende schwarze Füllung</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 10 b): Lineare Transformation II" quelle="inhalte/png/a10b.png" typ="bild" rahmen="ein">
+				<detail>In dieser Aufgabe sollten lineare Transformationsreihen erstellt werden, die aus zwei oder mehr geometrischen Grundformen bestehen.</detail>
+				<detail>In der obersten Transformationsreihe befinden sich ein schwarzes Quadrat und ein weißes Rechteck, welches allerdings im ersten Schritt aufgrund der identischen Grundfarbe nicht sichtbar ist. Im Verlauf der Transformation bewegt sich das weiße Rechtecek von rechts nach links über das Quadrat, bis es zum Schluss vom Rechteck in zwei Teile geteilt wird.
+					
+				Die nächste Transformationsreihe besteht aus einem Quadrat und einem Kreis. Die beiden Formen haben am Anfang der Transformation die selbe Größe. Im Verlauf der Transformation bewegen sich die Figuren zueinander zu, dabei hat der Kreis eine größere Schrittweite als das Quadrat (In der Reinzeichnung bewegt sich allerdings nur der Kreis, nicht aber das Rechteck). Daneben vergrößert sich auch der Durchmesser des Kreieses von Bild zu Bild.
+					
+				Die untere Transformationsreihe besteht aus einem Dreick und einem Kreis. Der Kreis liegt in der Mitte des Dreieckes und vergrößet den Durchmesser von Bild zu Bild. </detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 11: Öffnungsprozess" quelle="inhalte/png/a11.png" typ="bild" rahmen="ein">
+				<detail>Innerhalb einer Transformationsreihe soll ein "Öffnungsprozess" einer einfachen geometrischen Form entstehen.
+                
+                Beim oberen Öffnungsprozess nähern sich die Katheten des Dreiecks Bild für Bild in Richtung der Grundlinie, sodass im letzten Bild nur noch eine gerade Linie ensteht.	
+				Beim unterne Öffnungsprozess wird der Kreis wird in der Mitte geteilt. Die so resultierenten Halbkreise, welche nur aus einem nicht geschlossenen Bogen bestehen, bewegen sich in Richtung des Bildrandes, sodass am Ende eine zusammenhängende gekrümmte Linie ensteht, die so wie ein seitlich liegendes "S" aussieht.</detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Symmetrieoperationen">
+			<inhalt titel="Aufgabe 12: Symmetrieoperationen" quelle="inhalte/png/weiss.png" typ="bild" rahmen="aus">
+				<detail>In dieser Aufgabe beschäftigt man sich mit isometrischen und homöometrische Symmetrieoperationen.
+				
+				Isometrische Symmetrieoperation:
+				Bei dieser Symmetrieoperation ändern sich die Maße der Figur nicht es wird lediglich an einer Achse oder an einem Punkt gespiegelt.
+				
+				Homöometrische Symmetrieoperation:
+				Bei einer Homöometrischen Symmetrieoperation dürfen sich die Maße einer Figur ändern. Auch Änderungen hinsichtlich der Streckung, Zerrung und weiterer Parameter sind möglich</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 12: isometrische Symmetrieoperationen I" quelle="inhalte/png/a12_1_1.png" typ="bild" rahmen="aus">
+				<detail>Mit einer Figur sollten symmetrische Operationen durchgeführt werden.
+                    
+				Die Figur, eine Kombination aus Kreis und Dreieck, der Skizze auf der linken Seite wurde an einer Achse gespiegelt, welche horizontal durch das enstandene "X" durchläuft.
+				Die Operation in der rechten Skizze wird an einer Achse gespiegelt die hinter dem vierten Rechteck, vertikal in der Komposition ist.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 12: isometrische Symmetrieoperationen II" quelle="inhalte/png/a12_1_2.png" typ="bild" rahmen="aus">
+				<detail>In dieser Komposition wird ein Parallelogramm mehrfach gespiegelt. Zuerst ensteht durch eine Spiegelung an einer vertikalen Achse ein Zwischenergebniss, welches erneuert an einer horizontalen Achse gespiegelt wird.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 12: homöometrische  Symmetrieoperationen I" quelle="inhalte/png/a12_2_1.png" typ="bild" rahmen="aus">
+				<detail>Mit einer Figur sollten homöometrische (proportional symmetrische) Operationen durchgeführt werden.
+                    
+				In der rechten Skizze wird ein Kreis mehrfach vertikal gespiegelt und dabei in die Länge gezerrt, sodass jeweils schmale Ovale enstehen.
+				In der linken Skizze hingegen wird ein Kreis mehrfach horizontal gespiegelt. In jedem Operationsprozess wird der Kreis immer weiter in die Breite gezogen und gekrümmt.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 12: homöometrische  Symmetrieoperationen II" quelle="inhalte/png/a12_2_2.png" typ="bild" rahmen="aus">
+				<detail>Hier wird ein Kreis mehrfach an einem Punkt gespiegelt und in abwechelnder Füllung übereinander gelegt. Der Kreis wird dabei in jedem Schritt kleiner im Durchmesser. </detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Flächen">
+			<inhalt titel="Aufgabe 13 a): Kombinatorik (2x2-Matrix)" quelle="inhalte/png/a13a.png" typ="bild" rahmen="aus">
+				<detail>Die Flächenanordnung innerhalb der 2x2-Ausgangsmatrizen sollten mithilfe kombinatorischer Methoden neu angeordnet werden.
+				
+                Die Raute wurde durch eine 2x2-Matrix in 4 Einzelstücke geteilt. Die Ausgangsmatrix sieht wie folgt aus:
+				01 02
+				03 04
+				
+                Die Neuanordnung der Matrix sieht wie folgt aus:
+				03 04
+				01 02
+				
+                Es ensteht eine neue Figur, bestehend aus 2 Dreiecken, welche aussieht wie eine Sanduhr.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 13 b): Kombinatorik (3x3-Matrix)" quelle="inhalte/png/a13b_1.png" typ="bild" rahmen="aus">
+				<detail>Die Neuanordnung der Flächenordnung geschieht in dieser Aufgabe, in Ausgangsmatrizen der Größe 3x3.
+				
+                Der Kreis wurde durch eine 3x3 Matrix in 9 Einzelstücke geteilt. Die Ausgangsmatrix sieht wie folgt aus:
+				01 02 03
+				04 05 06
+				07 08 09
+                    
+				Die Neuanordnung der Matrix sieht wie folgt aus:
+				07 08 06
+				01 02 09
+				04 05 03
+				
+                Es enstanden zwei neue Figuren, die beide aussehen wie Schnecken. Die obere Schnecke ist auf dem Kopf und hat ein kleineres "Schneckenhaus" als die untere.</detail>
+				</inhalt>
+			<inhalt titel="Aufgabe 13 b): Kobinatorik (5x5-Matrix) " quelle="inhalte/png/a13b_2.png" typ="bild" rahmen="aus">
+				<detail>Die Neuanordnung der Flächenordnung geschieht in dieser Aufgabe, in Ausgangsmatrizen der Größe 5x5.
+				
+                Der Stern wurde durch eine 5x5 Matrix in 25 Einzelstücke geteilt. Die Ausgangmatrix sieht wie folgt aus:
+				01 02 03 04 05
+				06 07 08 09 10
+				11 12 13 14 15
+				16 17 18 19 20
+				21 22 23 24 25
+				
+                Die neugeordnete Matrix sieht folgendermaßen aus:
+				01 02 08 04 05
+				07 09 16 20 21
+				12 14 06 03 10
+				17 19 11 13 15
+				22 24 23 18 25
+				
+                Durch diese Neuordnung sind aus dem Stern drei Figuren geworden: Die Figur unten links erinnert an eine Walfischflosse, die unten rechts an ein menschenähnliches Wesen, die Figur oben ist ein Trapez.</detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Permutation und Animation">
+			<inhalt titel="Aufgabe 14: Permutationsmatrix I" quelle="inhalte/png/a14_1.png" typ="bild" rahmen="aus">
+				<detail>Die Transformationsreihen aus den Aufgaben 10 und 11, werden anhand von unterschiedlichen Anordnungssymantiken untersucht. Die Permutation wird in 8x8-Matrizen dargestellt.
+				
+                Die Hauptdiagonale der Matrize besteht aus Einsen. Die Diagonalen daneben aus Zweien, die daneben aus 3 und so weiter.
+					
+					Durch diese Permutation ensteht eine Art Wellenbewegung von der oberen rechten Ecke und der unteren linken Ecke zur Mitte hin.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 14: Permutationsmatrix II" quelle="inhalte/png/a14_2.png" typ="bild" rahmen="aus">
+				<detail>Bei dieser Permutationsmatrix bestehen die Spalten entweder nur aus geraden oder nur aus ungeraden Zahlen. Es beginnt mit einer Zahl "n", die darunter liegende Zahl ist "n+2", dann kommt wieder "n", die von "n+4" gefolgt wird. Dieser Prozess wiederholt sich nocheinmal.
+				Ausschlaggebend ist die erste Zeile der Matrix, welche in der ersten Hälfte von 1 bis 4 geht und in der Zweiten Hälfte von 4 bis 1.
+				Die spaltenweise Anordnung ändert sich in der rechten Hälfte der Matrix, hierbei werden die Positionen von "n+2" und "n+4" vertauscht.
+				
+				Durch diese Anordnung der Permutationsmatrix enstehen in jeder Zeile zwei wellenförmige Bewegungen, welche in den geraden Zeilen kurz verzögert und in den ungeraden gleichzeitig, von der Mitte aus an den Rand der Matrix gehen.
+				Die Wellenbewegungen der geraden Zeilen stehen konträr zu denen der ungeraden Zeilen.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 14: Permutationsmatrix III" quelle="inhalte/png/a14_3.png" typ="bild" rahmen="aus">
+				<detail>Bei dieser Permutationsmatrix besteht der äußere Rand aus Einsen, nach innen gefolgt von einem Rand aus Zweien und Dreien. Die Mitte der Matrix besteht aus einem Kern von vier Vieren.
+				
+				Diese Anordnung der Permutationsmatrix sorgt für einen pulsierenden Effekt, welcher von der Mitte ausgeht und nach außen verläuft.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 15: Animation" quelle="inhalte/animation/" typ="animation" rahmen="ein">
+				<detail>Diese Animation hat folgende Funktionen und Eigenschaften:
+				
+                Steuerung:
+				Die Animation kann durch die Elemente, links unter dem Screen gesteurt werden.
+				Von links nach rechts:
+				- Play/Pause zum Abspielen oder Pausieren der Animation
+				- Änderung des Aussehnden der Elemente (farbig, handgezeichnet, Vektorgrafik)
+				- Schneller: Erhöhen der Animationsgeschwindigkeit
+				- Langsamer: Erniedrigen der Animationsgeschwindigkeit
+				- Permutation: Ändern der Permutationsmatrix
+				- Objekt: Ändern des Objektes
+				Die Position außerhalb des Screens ist dadurch begründet, dass die Steuerung, nicht von der eigentlichen Animation ablenken soll.
+				
+                Inhalt:
+				Die Animation besteht aus:
+				- Einem Öffnungsprozess (Vektorgrafik, Handzeichnung)
+				- Drei linearen Transformationsprozessen (Vektorgrafik, Handzeichnung, Transformation mit Farbverlauf) </detail>
+			</inhalt>
+			<inhalt titel="Studien zur Interface-Gestaltung" quelle="inhalte/png/gui.png" typ="bild" rahmen="aus">
+				<detail>Die Aufgabe bestand darin ein selbsterklärndes Interface zur Navigation bspw. der Animationsreihe oder Multimediageräten, etc. zu entwerfen. Es durften bereits etablierte, als auch neue Elemente benutzt werden.
+					
+				Die Skizze auf der linken Seite des Screens zeigt Steuerelemte, die an die, Eigenschaften des Wassers angelehnt sind. Es wurden zur Symbolisierung dieser Eigenschaften stets drei Linien benutzt:
+				PLAY: Fließendes Wasser
+				PAUSE: Stehendes Wasser
+				PREVIOUS: Nach unten fließendes Wasser
+				NEXT: Nach oben fließendes Wasser
+				FAST BACKWARD: Schnell nach unten fließendes Wasser
+				FAST FORWARD: Schnell nach unten fließendes Wasser
+				EJECT: Gysier oder Springbrunnen</detail>
+				
+				
+				<detail>Die bekannten Steuerung aus der Animation, welche sich an bereits etablierten Symbolen bei PLAY, PAUSE, FASTER, SLOWER bedient. Allerdiengsm gibt in dieser Steuerung auch nicht etablierte Elemente, da sie im Allgemeinen keinen Verwendugszweck finden. Dise sind:
+				
+				Änderung des Elementaussenhens: Bestehend aus drei Kreisen, welche folgende Zustände symbolisieren: Vektorzeichnung (Nur Außenlinie, ohne Füllung), Handzeichnung (Krakelige Außenlinie) und Farbig (Ausgefüllt)
+				
+				Änderung der Permutationsmatrix: Ein, in vier Teilen geteiltes Quadrat. Symbol einer 2x2 Permutationsmatrix
+					
+				Änderung des Objektes: Button bestehend, aus vier geometrischen Grundformen.</detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Kameraübungen zu Strukturen">
+			<inhalt titel="Aufgabe 16: Kreise I" quelle="inhalte/fotos/16_1.jpg" typ="bild" rahmen="ein">
+				<detail>In dieser Aufgabe sollte man sich mit geometrischen Grundformen und Strukturen in der "echten Welt" beschäftigen. Diese sollten fotografiert und hier, möglichst störungsfrei und perspektivistisch unverzerrt, dokumentiert werden.
+                    
+				Auf diesem Foto sieht man eine Metallverkleidung einer Wand. Diese Verkleidung wurde mit symmetrisch angeordneten und identischen Kreisen durchlöchert.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 16: Dreiecke" quelle="inhalte/fotos/16_2.jpg" typ="bild" rahmen="ein">
+				<detail>Hier sieht man die Aussenwand der neuen Synagoge der israelitischen Religionsgemeinschaft in Ulm. Diese hat eine Vielzahl an Fenstern in Form des Davidsterns, welcher im Grunde aus zwei identischen, im Winkel von 180° zueinanderstehnden Dreiecken besteht, die Übereinander gelegt sind.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 16: Rechtecke" quelle="inhalte/fotos/16_3.jpg" typ="bild" rahmen="ein">
+				<detail>Dieses Foto zeigt Baustellenzäune an einer Straßenbahnbaustelle am Kuhberg. Die Zäune bestehen abwecheselnd aus Rechtecken in weißer Farbe und Rechtecken in der Signalfarbe Rot.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 16: Rechteck & Kreise" quelle="inhalte/fotos/16_4.jpg" typ="bild" rahmen="ein">
+				<detail>Auf diesem Foto ist eine rechteckiges, schwarzes Kochfeld zu sehen, bei denen alle Herdplatten an sind. So enstehen auf dem Kochfeld, halb ausgefüllte, rote Kreise, welche einen unterschiedlichen Durchmesser haben. </detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 16: Kreise II" quelle="inhalte/fotos/16_5.jpg" typ="bild" rahmen="ein">
+				<detail>Hier sieht man ein Stück eines leuchtenden LED-Streifens. Auf diesen Rechteckigen dunkleren Streifen finden sich die kreisförmigen Umrisse von einigen Dioden wieder, die eine hellere Füllung haben als der Hintergrund und in regelmäßigen Abständen nebeneinander geordnet sind.</detail>
+			</inhalt>
+		</abschnitt>
+		
+		<abschnitt titel="Farbe">
+			<inhalt titel="Aufgabe 17: Lineare Farbverläufe" quelle="inhalte/png/a17.png" typ="bild" rahmen="aus">
+				<detail>Hier sollten aus einer Zeitschrift quadratische Farbflächen ausgeschnitten und zu verschiednen Aspekten zu linearen Farbverläufen angeordnet werden. Diese Farbverläufe sind daneben nochmal in digitaler Form dargestellt.
+                    
+				Der erste Farbverlauf geht von einem hellen blau zu einem dunklen, fast schwarzen, violett über (Hell-Dunkel-Kontrast).
+				Der Farbverlauf in der zweiten Reihe geht von einem hellen zu einem dunklen rot über (Hell-Dunkel-Kontrast).
+				Der Farbverlauf in der letzten Reihe, geht von einem gelb in ein grün über (Farbe-an-sich-Kontrast).</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 18: Farbige Transformationsreihen" quelle="inhalte/png/a18.png" typ="bild" rahmen="aus">
+				<detail>In dieser Aufgabe, werden die Transformationsreihen aus Aufgabe 10 zur Hand genommen mit den Farbreihen aus Aufgabe 17 eingefärbt.
+				Die Einfärbung der Grundfarbe und der Objekte erfolgt gegenläufig, dass heißt, das Objekt hat zu Beginn die selbe Farbe wie die Grundfläche zu Anfang und andersherum, so ensteht bei einer ungeraden Anzahl von Elementen oder Farben eine komplett einfarbige Komposition in der Mitte der Reihe.
+				
+				Da die Reihen mehr Elemente haben, als die Verläufe Farben, werden nach dem Ende des Verlaufes die Elemente der Reihe in absteigender Verlaufsreihenfolge eingefärbt.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 19: Farbübung Fotografie: Farbverlauf I" quelle="inhalte/png/a19_1.png" typ="bild" rahmen="ein">
+				<detail>In dieser Teilaufgabe sollten Fotografien ausgewählt werden und ein Farbverlauf aus ihnen herausgezogen werden. Die Farbverläufe werden in einer Reihe rechts vom Bild dargestellt.
+                    
+				Dieses Foto hat zwei Teile: einen größeren, der vom Meer bedeckt wird und im oberen Bereich einen kleinen, der vom Himmel bedeckt wird.
+				Der Farbverlauf hier ist hier eine Hell-Dunkel-Verlauf, der von einem sehr hellen blau in ein dunkles übergeht.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 19: Farbübung Fotografie: Farbverlauf II" quelle="inhalte/png/a19_2.png" typ="bild" rahmen="ein">
+				<detail>Dieses Foto zeigt ein Getreidefeld im Vordergrund und im Hintergrund einen Himmel mit einer aufgehenden Sonne.
+				
+				Der Farbverlauf in diesem Bild geht von einem dunklen Braun ihn ein sehr helles über.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 19: Farbübung Fotografie: Farbverlauf III" quelle="inhalte/png/a19_3.png" typ="bild" rahmen="ein">
+				<detail>Dieses Foto zeigt eine Person auf dem Wrack einer DC-3-Maschine auf dem isländischen Sólheimasandur’s black sand beach. Wie der Name des Strandes schon sagt, ist der Sand dieses Strandes schwarz.
+				
+				Der hier vorzufindene Farbverlauf verläuft von einem sehr dunkles, fast schwarzes, graublau in ein sehr helles, fast weißes, blau</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 19: Farbübung Fotografie: Harmonisches Farbklima I" quelle="inhalte/png/a19_4.png" typ="bild" rahmen="ein">
+				<detail>In dieser Teilaufgabe extrahiert man das in den Bildern vorherrschende Farbklima heraus. Die Reihen, welche sich unter dem Bild befinden, werden von links nach rechts bezüglich ihres Herausstechenes aus dem Bild.</detail>
+				<detail>Dieses Foto zeigt einen von oben aufgenommen Strand.
+					
+				Den größten Anteil des Bildes bildet das helle Braun des trockenen Sands des Strandes gefolgt vom helleren Blau des Wassers, gefolgt vom Grün des Waldes, gefolgt vom dunklen Braun des nassen Sandes und schließlich das dunkle blau des Wassres. </detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 19: Farbübung Fotografie: Harmonisches Farbklima II" quelle="inhalte/png/a19_5.png" typ="bild" rahmen="ein">
+				<detail>Hier sieht man eine Silhouette eine Frau die entgegen, des Sonnenuntergangs auf einem Stein steht.
+				
+				Am meisten stecht aus diesem Bild das Schwarz der Schatten heraus, gefolgt von den verschiednen Tönen, des Himmels und der Wolken.</detail>
+			</inhalt>
+			<inhalt titel="Aufgabe 19: Farbübung Fotografie: Harmonisches Farbklima III" quelle="inhalte/png/a19_6.png" typ="bild" rahmen="ein">
+				<detail>Dieses Bild zeigt eine Landstraße, die durch ein relativ dünn bewachsenes Waldstück.
+				
+				Die grauen Farben der Straße und des Himmles stechen am meisten aus dem Bild raus, gefolgt vom gelblichen Ton der Straßenmarkierung und dem Grün des Waldes und des bräunlichen Tones des Waldbodens.</detail>
+			</inhalt>
+		</abschnitt>
+		
+    </doku>
+</xml>
+</html>

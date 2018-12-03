@@ -1,0 +1,29 @@
+﻿<!-- HTML document -->
+<!--
+    Grundlagen der Gestaltung Framework
+    Univerität Ulm
+    Institut für Medienforschung und -entwicklung
+    Tobias Lahmann
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Button zu den Grundlagen der Gestaltung I</title>
+    <!-- Stylesheets -->
+    <link type="text/css" href="asset/css/radio.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="buttons">
+        <!-- Derjenige Button, welcher in Zukunft ein 3er Toggle-Button sein soll, muss durch die 
+        folgenden 8 Zeilen ersetzt werden. Beim Ersetzen eines anderen Buttons als den Typ muss 
+        selbstverständlich auch die aufgerufene Funktion ersetzt werden. (onclick="irgendwasAnderes()") -->
+        <div id="radiogroup">
+          <input id="radio1RD" name="radiogroup" type="radio" onclick="changeTypeOfObj()">
+            <label id="radio1" for="radio1RD"></label>
+          <input id="radio2RD" name="radiogroup" type="radio" onclick="changeTypeOfObj()">
+            <label id="radio2" for="radio2RD"></label>
+          <input id="radio3RD" name="radiogroup" type="radio" onclick="changeTypeOfObj()">
+            <label id="radio3" for="radio3RD"></label>
+        </div>
+    </div>
+</body>

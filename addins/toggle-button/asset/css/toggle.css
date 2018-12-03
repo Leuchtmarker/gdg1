@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@keyframes borderscale {
+  50% {
+    box-shadow: 0 0 0 1px #a2a2a7; } }
+
+#toggle {
+  /* Diese Eigenschaften müssen nicht verändert werden */
+  /* Grundeigenschaften wie bei anderen Buttons */
+  background-size: contain;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  /* Die folgenden Werte können verändert werden, um die Position des Buttons festzulegen. */
+  width: 50px;
+  height: 50px;
+  left: 50px;
+  top: 50px;
+}
+    
+/* Hier die Bilder einbinden */
+#toggle {
+    content: url("../../inhalte/buttons/Play_1.png");
+}
+#toggle:hover {
+    content: url("../../inhalte/buttons/Play_2.png");
+}
+#toggle:active {
+    content: url("../../inhalte/buttons/Play_3.png");
+}
+
+#toggle:checked {
+    content: url("../../inhalte/buttons/Pause_1.png");
+}
+#toggle:hover:checked {
+    content: url("../../inhalte/buttons/Pause_2.png");
+}
+#toggle:active:checked {
+    content: url("../../inhalte/buttons/Pause_3.png");
+}
+

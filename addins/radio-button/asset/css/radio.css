@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@keyframes borderscale {
+  50% {
+    box-shadow: 0 0 0 1px #a2a2a7; } }
+
+#buttons #radiogroup input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  font-size: 1em;
+  width: 100%; }
+
+#buttons #radiogroup #radio1RD:checked ~ #radio1 {
+  z-index: -10; }
+
+#buttons #radiogroup #radio1RD:checked ~ #radio2 {
+  z-index: -5; }
+
+#buttons #radiogroup #radio1RD:checked ~ #radio3 {
+  z-index: 0; }
+
+#buttons #radiogroup #radio2RD:checked ~ #radio2 {
+  z-index: -10; }
+
+#buttons #radiogroup #radio2RD:checked ~ #radio3 {
+  z-index: -5; }
+
+#buttons #radiogroup #radio2RD:checked ~ #radio1 {
+  z-index: 0; }
+
+#buttons #radiogroup #radio3RD:checked ~ #radio3 {
+  z-index: -10; }
+
+#buttons #radiogroup #radio3RD:checked ~ #radio1 {
+  z-index: -5; }
+
+#buttons #radiogroup #radio3RD:checked ~ #radio2 {
+  z-index: 0; }
+
+#radio1, #radio2, #radio3 {
+  /* Diese Eigenschaften müssen nicht verändert werden */
+  /* Grundeigenschaften wi bei anderen Buttons */
+  background-size: contain;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  /* Diese folgenden Werte können verändert werden, um die Position des Buttons festzulegen. */
+  /*========================================================================*/
+  /*        BUTTON                                                          */
+  /* Breite: 75px (width)                                                   */
+  /* Höhe: 30px (height)                                                    */
+  /* Abstand zur linken Kante/Rahmen: 50px (left)                           */
+  /* Abstand zur oberen Kante/Rahmen: Hier 50px (top)                       */
+  /*========================================================================*/
+  width: 75px;
+  height: 30px;
+  left: 50px;
+  top: 100px;
+  /* Diese Eigenschaften müssen ebenfalls nicht verändert werden */ }
+  #radio1:before, #radio1:after, #radio2:before, #radio2:after, #radio3:before, #radio3:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border: none;
+    -webkit-animation: none 0 ease-in;
+    -moz-animation: none 0 ease-in;
+    -o-animation: none 0 ease-in;
+    animation: none 0 ease-in;
+    -webkit-transform-origin: 0;
+    -moz-transform-origin: 0;
+    -ms-transform-origin: 0;
+    -o-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    filter: none; }
+
+#radio1:before {
+  /* Das Bild, was im Zustand 3 angezeigt wird */
+  background-image: url("../../inhalte/buttons/state3_1.png"); }
+
+#radio1:hover:before {
+  /* Das Bild, was im Zustand 3 beim 'Schweben' angezeigt wird */
+  background-image: url("../../inhalte/buttons/state3_2.png"); }
+
+#radio1:active:before {
+  /* Das Bild, was im Zustand 3 beim drücken (und halten) angezeigt wird */
+  background-image: url("../../inhalte/buttons/state3_3.png"); }
+
+#radio2:before {
+  /* Das Bild, was im Zustand 2 angezeigt wird */
+  background-image: url("../../inhalte/buttons/state2_1.png"); }
+
+#radio2:hover:before {
+  /* Das Bild, was im Zustand 2 beim 'Schweben' angezeigt wird */
+  background-image: url("../../inhalte/buttons/state2_2.png"); }
+
+#radio2:active:before {
+  /* Das Bild, was im Zustand 2 beim drücken (und halten) angezeigt wird */
+  background-image: url("../../inhalte/buttons/state2_3.png"); }
+
+#radio3:before {
+  /* Das Bild, was im Zustand 1 angezeigt wird */
+  background-image: url("../../inhalte/buttons/state1_1.png"); }
+
+#radio3:hover:before {
+  /* Das Bild, was im Zustand 1 beim 'Schweben' angezeigt wird */
+  background-image: url("../../inhalte/buttons/state1_2.png"); }
+
+#radio3:active:before {
+  /* Das Bild, was im Zustand 1 beim drücken (und halten) angezeigt wird */
+  background-image: url("../../inhalte/buttons/state1_3.png"); }
